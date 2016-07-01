@@ -33,6 +33,8 @@ Make a simplified slack clone.
 calls and make these calls asyncrounous
 6. map as many app states as possible to routes to promote sharing (e.g.
 have permalinks for each message)
+7. use placeholders (both UI elements and actions / reducers) instead of features you didn't have time to implement - overall code organization and project structure are more important than implementation details;
+8. simplistic design will be completely acceptable - don't waste much time on it
 
 ## Essential technology stack
 1. [npm](https://www.npmjs.com) as package manager
