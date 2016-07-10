@@ -8,6 +8,10 @@ You can read the original instructions [here](INSTRUCTIONS.md).
 
 # Usage
 
+Make sure you have Node.js and npm installed. If you do not, please visit [Node.js install page](https://nodejs.org/en/download/)
+
+This project has been developed with Node.js v5.12.0 & npm 3.8.6 .
+
 ## Short Version
 
 Type
