@@ -1,0 +1,5 @@
+#Ignore ES5 config files
+webpack.config.js
+
+#Ignore ES5 generated bundle files
+*.bundle.js
