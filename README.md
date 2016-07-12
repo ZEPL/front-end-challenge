@@ -8,7 +8,8 @@ be used by us for business purposes.
 ## Submission instructions
 1. Fork this repository on github.
 2. Complete the project as described below within your fork.
-3. Push all of your changes to your fork on github and submit a pull request to
+3. Keep the commit history - don't squash.
+4. Push all of your changes to your fork on github and submit a pull request to
 this repository.
 
 ## Project description
@@ -35,6 +36,7 @@ calls and make these calls asyncrounous
 have permalinks for each message)
 7. use placeholders (both UI elements and actions / reducers) instead of features you didn't have time to implement - overall code organization and project structure are more important than implementation details;
 8. simplistic design will be completely acceptable - don't waste much time on it
+9. strive for [good commit messages](https://github.com/erlang/otp/wiki/writing-good-commit-messages)
 
 ## Essential technology stack
 1. [npm](https://www.npmjs.com) as package manager
@@ -62,3 +64,4 @@ Remarks:
 3. Adherence to the tech stack described above
 4. Completeness
 5. Test coverage
+6. Commit history - structure and quality
