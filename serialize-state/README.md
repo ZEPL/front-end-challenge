@@ -21,7 +21,7 @@ Refer to the image below for a simple example. Black border represents the
 parent component that you need to develop. Red border represents an example of
 arbitrary children which state your component should to be able to save and reset.
 
-[![example](https://github.com/NFLabs/front-end-challenge/blob/save-state/example.gif)](https://github.com/NFLabs/front-end-challenge/blob/save-state/example.gif)
+[![example](https://github.com/NFLabs/front-end-challenge/blob/master/serialize-state/example.gif)](https://github.com/NFLabs/front-end-challenge/blob/master/serialize-state/example.gif)
 
 
 ## Implementation instructions
