@@ -7,6 +7,7 @@ const CheckboxLists = (props) => {
       <li key={checkbox.title}>
         <input
           type="checkbox"
+          disabled={props.radioDisabled}
           value={checkbox.state}
           checked={checkbox.state}
           onChange={event => props.checkboxChange(indexCheckbox)}
