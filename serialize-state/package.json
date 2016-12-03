@@ -4,7 +4,9 @@
   "description": "A component based UI with serializable application state",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack -d --watch",
+    "build": "webpack -p",
+    "webpack-server": "webpack-dev-server --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/sravan-s/front-end-challenge/issues"
   },
-  "homepage": "https://github.com/sravan-s/front-end-challenge#readme"
+  "homepage": "https://github.com/sravan-s/front-end-challenge#readme",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
