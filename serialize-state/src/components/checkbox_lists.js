@@ -13,7 +13,6 @@ const CheckboxLists = (props) => {
           onChange={event => props.checkboxChange(indexCheckbox)}
         />
         {checkbox.title}
-        {checkbox.state.toString()}
       </li>
     );
   });

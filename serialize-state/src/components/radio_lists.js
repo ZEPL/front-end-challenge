@@ -14,7 +14,6 @@ const RadioLists = (props) => {
           onChange={event => props.radiosChange(indexRadio)}
         />
         {radio.title}
-        {radio.state.toString()}
         <CheckboxLists
           checkboxs={radio.checkbox}
           radioDisabled={!radio.state}

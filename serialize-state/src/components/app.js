@@ -1,40 +1,14 @@
 import React, { Component } from 'react';
-import RadioLists from './radio_lists'
-//const radios is the initial state: we can change the number of radio and checkbox
-//We doesn't put id in it so we will suppose that the name is UNIQUE!!!! (for map key)
-const radios = [{
-  title: "radio1",
-  state: true,
-  checkbox:[{
-    "title": "checkbox1",
-    "state": true //false
-  },{
-    "title": "checkbox2",
-    "state": true //false
-  }]
-  },
-  {
-    title: "radio2",
-    state: false,
-    checkbox:[{
-      "title": "checkbox3",
-      "state": false //false
-    },{
-      "title": "checkbox4",
-      "state": true //false
-    },{
-      "title": "checkbox5",
-      "state": false //false
-    }]
-}];
+import RadioLists from './radio_lists';
+import {radios} from '../initial_data'; //initial_data contain the initial state of radios
 // this component is the parent component and has all the state of the apps
 export default class App extends Component{
   constructor(props){
     super(props);
+    console.log(radios);
     //radios is the array of radio containing checkboxs
     //inputPaste is the state of the input
     this.state = {radios,inputPaste:''};
-    console.log(this.state.radios);
     //we bind the this to the function onButtonSetState so it can use this.setState etc
     this.onButtonSetStateClick=this.onButtonSetStateClick.bind(this);
     this.onButtonSaveStateClick=this.onButtonSaveStateClick.bind(this);
@@ -61,7 +35,6 @@ export default class App extends Component{
   }
   //this function will just change the radios state by the inputState
   onButtonSetStateClick(){
-    console.log(this.state.inputPaste);
     this.setState({radios:JSON.parse(this.state.inputPaste)})
   }
   //copy=> we have to create an hidden input then put the value of the radios state
