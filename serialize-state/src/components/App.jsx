@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Clipboard from './Clipboard.jsx';
+import ProfileForm from './ProfileForm.jsx';
+
 const App = () => (
   <div>
-    Welcome
+    <Clipboard />
+    <ProfileForm />
   </div>
 );
 
