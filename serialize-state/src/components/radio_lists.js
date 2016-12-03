@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckboxLists from './checkbox_lists';
 
 const RadioLists = (props) => {
   const radioItem = props.radios.map((radio,indexRadio) => {
@@ -8,7 +9,10 @@ const RadioLists = (props) => {
           name="radioSelected"
           type="radio"
         />
-      {radio.title}
+        {radio.title}
+        <CheckboxLists
+          checkboxs={radio.checkbox}
+        />
       </li>
     );
   });
