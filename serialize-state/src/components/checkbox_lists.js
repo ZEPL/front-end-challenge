@@ -7,8 +7,12 @@ const CheckboxLists = (props) => {
       <li key={checkbox.title}>
         <input
           type="checkbox"
+          value={checkbox.state}
+          checked={checkbox.state}
+          onChange={event => props.checkboxChange(indexCheckbox)}
         />
         {checkbox.title}
+        {checkbox.state.toString()}
       </li>
     );
   });

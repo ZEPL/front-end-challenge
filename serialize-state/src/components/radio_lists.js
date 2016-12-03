@@ -17,6 +17,7 @@ const RadioLists = (props) => {
         {radio.state.toString()}
         <CheckboxLists
           checkboxs={radio.checkbox}
+          checkboxChange={(indexCheckBox)=>props.checkboxChange(indexRadio,indexCheckBox)}
         />
       </li>
     );
