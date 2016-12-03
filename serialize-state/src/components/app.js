@@ -31,8 +31,13 @@ const radios = [{
 export default class App extends Component{
   constructor(props){
     super(props);
-    this.state = {radios};
+    //radios is the array of radio containing checkboxs
+    //inputPaste is the state of the input
+    this.state = {radios,inputPaste:''};
     console.log(this.state.radios);
+    //we bind the this to the function onButtonSetState so it can use this.setState etc
+    this.onButtonSetStateClick=this.onButtonSetStateClick.bind(this);
+    this.onButtonSaveStateClick=this.onButtonSaveStateClick.bind(this);
   }
   //we want to change the state of the radios
   //the radio_list onChange send the index of the radio
@@ -54,6 +59,14 @@ export default class App extends Component{
     radios[indexRadio].checkbox[indexCheckBox].state=!radios[indexRadio].checkbox[indexCheckBox].state;
     this.setState({radios});
   }
+  //this function will just change the radios state by the inputState
+  onButtonSetStateClick(){
+    console.log(this.state.inputPaste);
+    this.setState({radios:JSON.parse(this.state.inputPaste)})
+  }
+  onButtonSaveStateClick(){
+
+  }
   render () {
     return (
       <div>
@@ -61,10 +74,14 @@ export default class App extends Component{
           type="text"
           name="pasteInput"
           placeholder="paste state here"
+          value={this.state.inputPaste}
+          onChange={event => this.setState({inputPaste : event.target.value})}
         />
         <button
           type="button"
-          name="buttonSetState">
+          name="buttonSetState"
+          onClick={this.onButtonSetStateClick}
+          >
           Set state
         </button>
         <button
