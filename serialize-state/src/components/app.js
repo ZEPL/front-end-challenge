@@ -64,8 +64,15 @@ export default class App extends Component{
     console.log(this.state.inputPaste);
     this.setState({radios:JSON.parse(this.state.inputPaste)})
   }
+  //copy=> we have to create an hidden input then put the value of the radios state
+  //then append the input to the html copy the value and delete it
   onButtonSaveStateClick(){
-
+    let hiddenInput = document.createElement("input");
+    hiddenInput.setAttribute("value",JSON.stringify(this.state.radios));
+    document.body.appendChild(hiddenInput);
+    hiddenInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(hiddenInput);
   }
   render () {
     return (
@@ -86,7 +93,9 @@ export default class App extends Component{
         </button>
         <button
           type="button"
-          name="buttonSaveState">
+          name="buttonSaveState"
+          onClick={this.onButtonSaveStateClick}
+          >
           Save state
         </button>
         <RadioLists
