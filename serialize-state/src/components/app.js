@@ -6,7 +6,23 @@ export default class App extends Component{
   }
   render () {
     return (
-      <div>TEST</div>
+      <div>
+        <input
+          type="text"
+          name="pasteInput"
+          placeholder="paste state here"
+        />
+        <button
+          type="button"
+          name="buttonSetState">
+          Set state
+        </button>
+        <button
+          type="button"
+          name="buttonSaveState">
+          Save state
+        </button>
+      </div>
     )
   }
 }
