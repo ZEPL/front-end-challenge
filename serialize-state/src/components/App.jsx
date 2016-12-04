@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Clipboard from './Clipboard.jsx';
+import Clipboard from '../containers/Clipboard.jsx';
 import ProfileForm from './ProfileForm.jsx';
 
 const App = () => (
