@@ -2,14 +2,17 @@ import React, { PropTypes } from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers/AppReducer';
+import RadioContainer from './components/RadioContainer';
+import ControlContainer from './components/ControlContainer';
 
 const store = createStore(reducers);
 
-function App({ message }) {
+function App() {
   return (
     <Provider store={store}>
       <div>
-        <h1>{message}</h1>
+        <ControlContainer />
+        <RadioContainer />
       </div>
     </Provider>
   );

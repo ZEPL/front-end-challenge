@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-console.log(__dirname);
-
 const config = {
   devtool: 'eval-source-map',
 
@@ -79,7 +77,7 @@ const config = {
     contentBase: "./build",
     colors: true,
     historyApiFallback: true,
-    port: process.env.PORT||32189,
+    port: process.env.PORT||32199,
     inline: true,
     hot: true
   }

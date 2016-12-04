@@ -9,10 +9,10 @@ import './resources/font/NotoSansKR-Hestia/stylesheets/NotoSansKR-Hestia.css';
 function AppContainer() {
   return (
     <div>
-      <App message="Hello World!" />
+      <App />
     </div>
   );
 }
 
-render(<AppContainer />, document.getElementById('app'));
+render(<AppContainer />, window.document.getElementById('react-app'));
 
