@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProfileForm = () => (
   <section>
-    <h4>Comic Form</h4>
+    <h4>Profile Form</h4>
     <p>Hi my name is</p>
     <input/>
     <p>and I love</p>
