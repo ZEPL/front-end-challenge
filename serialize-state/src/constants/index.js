@@ -8,3 +8,6 @@ export const SPIDEY = 'SPIDEY';
 export const HULK = 'HULK';
 export const BATMAN = 'BATMAN';
 export const SUPERMAN = 'SUPERMAN';
+
+export const MARVEL = 'MARVEL';
+export const DC = 'DC';
