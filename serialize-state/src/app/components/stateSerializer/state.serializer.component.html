@@ -1,0 +1,8 @@
+<input [(ngModel)]="childStateJSON" type="text" #stateInput>
+<button type="button" (click)="setState()">set state</button>
+<button type="button" (click)="saveState()">save state</button>
+<div>
+  <tree [datas]="childState"
+        (change)="updateState($event)">
+  </tree>
+</div>

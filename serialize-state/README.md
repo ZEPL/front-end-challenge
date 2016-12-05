@@ -1,3 +1,10 @@
+#INSTALL
+`npm install`
+#TEST APP
+`npm test`
+#START APP
+`npm start`
+
 Front-end engineer challenge
 ============================
 This challenge is designed to assess the ability of a front-end candidate to
