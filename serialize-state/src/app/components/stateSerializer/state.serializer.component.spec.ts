@@ -3,6 +3,8 @@
 import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {StateSerializerComponent} from './state.serializer.component';
 import {FormsModule} from '@angular/forms';
+import {TreeComponent} from '../tree/tree.component';
+import {TreeInternalComponent} from '../tree/tree.internal.component';
 
 
 let comp: StateSerializerComponent;
@@ -18,7 +20,7 @@ export function newEvent(eventName: string, bubbles = false, cancelable = false)
 describe('State Serializer', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StateSerializerComponent],
+      declarations: [TreeInternalComponent, TreeComponent, StateSerializerComponent],
       imports: [FormsModule]
     });
     fixture = TestBed.createComponent(StateSerializerComponent);

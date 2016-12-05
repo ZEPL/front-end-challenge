@@ -1,4 +1,4 @@
-import { NgModule, ApplicationRef } from '@angular/core';
+import {NgModule, ApplicationRef} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,8 @@ import { routing } from './app.routing';
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 import {StateSerializerComponent} from './components/stateSerializer/state.serializer.component';
 import {HomeComponent} from './containers/home/home.component';
+import {TreeComponent} from './components/tree/tree.component';
+import {TreeInternalComponent} from './components/tree/tree.internal.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,9 @@ import {HomeComponent} from './containers/home/home.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    StateSerializerComponent
+    StateSerializerComponent,
+    TreeComponent,
+    TreeInternalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+<ul *ngIf="node">
+  <li>
+    <input type="{{node.nodeType}}"
+           [name]="node.name"
+           [checked]="node.checked"
+           [disabled]="isDisabled()?'disable':''"
+           (change)="onNodeChange($event)">
+    <label>{{node.title}}</label>
+    <template [ngIf]="hasChild()">
+      <tree-internal *ngFor="let child of node.children"
+                     [node]="child"
+                     [parentNode]="node"
+                     [parentDisabled]="isDisabled()">
+      </tree-internal>
+    </template>
+  </li>
+
+</ul>

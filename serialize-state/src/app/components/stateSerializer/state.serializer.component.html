@@ -2,5 +2,7 @@
 <button type="button" (click)="setState()">set state</button>
 <button type="button" (click)="saveState()">save state</button>
 <div>
-  {{childState | json}}
+  <tree [datas]="childState"
+        (change)="updateState($event)">
+  </tree>
 </div>

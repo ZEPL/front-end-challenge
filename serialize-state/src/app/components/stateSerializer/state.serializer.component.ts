@@ -24,7 +24,6 @@ export class StateSerializerComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Hello State Serializer');
     this.dispatcher.next(new ChangeStateAction(this.initialState));
   }
 
@@ -77,7 +76,6 @@ export class StateSerializerComponent implements OnInit {
    */
   setState() {
     try {
-      console.log(this.childStateJSON);
       let cState = JSON.parse(this.childStateJSON);
       this.loadChildState(cState);
     } catch (e) {
