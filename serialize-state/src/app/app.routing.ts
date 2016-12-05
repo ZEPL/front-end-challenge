@@ -1,9 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
-import {StateSerializerComponent} from './components/stateSerializer/state.serializer.component';
+import {HomeComponent} from './containers/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: StateSerializerComponent }
+  { path: '', component: HomeComponent }
 ];
 
 export const routing = RouterModule.forRoot(routes);

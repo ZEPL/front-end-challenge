@@ -8,6 +8,7 @@ import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 import {StateSerializerComponent} from './components/stateSerializer/state.serializer.component';
+import {HomeComponent} from './containers/home/home.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {StateSerializerComponent} from './components/stateSerializer/state.seria
   ],
   declarations: [
     AppComponent,
+    HomeComponent,
     StateSerializerComponent
   ],
   providers: [],
