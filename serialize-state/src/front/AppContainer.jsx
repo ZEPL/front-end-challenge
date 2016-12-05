@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import App from './App';
 
-import './app.scss';
+import './App.scss';
 import './resources/font/NotoSansKR-Hestia/stylesheets/NotoSansKR-Hestia.css';
 
 function AppContainer() {

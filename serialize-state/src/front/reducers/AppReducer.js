@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import ExampleReducer from './Example';
+import checkbox from './CheckboxReducer';
 
 export default combineReducers({
-  ExampleReducer,
+  checkbox,
 });
