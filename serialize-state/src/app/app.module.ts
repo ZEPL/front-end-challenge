@@ -1,12 +1,12 @@
 import {NgModule, ApplicationRef} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpModule} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+import {AppComponent} from './app.component';
+import {routing} from './app.routing';
 
-import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
+import {removeNgStyles, createNewHosts} from '@angularclass/hmr';
 import {StateSerializerComponent} from './components/stateSerializer/state.serializer.component';
 import {HomeComponent} from './containers/home/home.component';
 import {TreeComponent} from './components/tree/tree.component';
@@ -30,10 +30,13 @@ import {TreeInternalComponent} from './components/tree/tree.internal.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef) {}
+  constructor(public appRef: ApplicationRef) {
+  }
+
   hmrOnInit(store) {
     console.log('HMR store', store);
   }
+
   hmrOnDestroy(store) {
     let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
     // recreate elements
@@ -41,6 +44,7 @@ export class AppModule {
     // remove styles
     removeNgStyles();
   }
+
   hmrAfterDestroy(store) {
     // display new elements
     store.disposeOldHosts();

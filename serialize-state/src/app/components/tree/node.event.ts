@@ -4,4 +4,5 @@ export interface NodeEvent {
   node: Node;
 }
 
-export interface NodeSelectedEvent extends NodeEvent {}
+export interface NodeSelectedEvent extends NodeEvent {
+}

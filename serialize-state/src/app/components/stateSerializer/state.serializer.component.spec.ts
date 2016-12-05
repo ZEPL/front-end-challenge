@@ -1,5 +1,3 @@
-
-
 import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {StateSerializerComponent} from './state.serializer.component';
 import {FormsModule} from '@angular/forms';
@@ -8,7 +6,7 @@ import {TreeInternalComponent} from '../tree/tree.internal.component';
 
 
 let comp: StateSerializerComponent;
-let fixture:  ComponentFixture<StateSerializerComponent>;
+let fixture: ComponentFixture<StateSerializerComponent>;
 
 export function newEvent(eventName: string, bubbles = false, cancelable = false) {
   let evt = document.createEvent('CustomEvent');  // MUST be 'CustomEvent'
@@ -28,7 +26,7 @@ describe('State Serializer', () => {
   });
 
   it('should initialize with input state', () => {
-    let expectedState =  { 'a' : 1 };
+    let expectedState = {'a': 1};
     comp.initialState = expectedState;
     fixture.detectChanges();
     expect(comp.childState).toBe(expectedState);
@@ -43,7 +41,7 @@ describe('State Serializer', () => {
   });
 
   it('should be not set by wrong childStateJSON when call setState()', () => {
-    let expectedState =  { 'b' : 4 };
+    let expectedState = {'b': 4};
     let expectedJSON = '{"a":1';
     comp.initialState = expectedState;
     comp.childStateJSON = expectedJSON;
@@ -53,7 +51,7 @@ describe('State Serializer', () => {
   });
 
   it('should be run when call saveState()', () => {
-    let expectedState =  { 'a' : 1 };
+    let expectedState = {'a': 1};
     comp.initialState = expectedState;
     fixture.detectChanges();
     comp.saveState();
@@ -61,7 +59,7 @@ describe('State Serializer', () => {
 
 
   it('should be set by param when call updateState(state)', () => {
-    let expectedState =  { 'a' : 1 };
+    let expectedState = {'a': 1};
     fixture.detectChanges();
     comp.updateState(expectedState);
     expect(comp.childState).toBe(expectedState);

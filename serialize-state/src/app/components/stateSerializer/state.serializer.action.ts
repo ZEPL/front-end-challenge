@@ -1,6 +1,3 @@
-
-
-
 export class ChangeStateAction {
   constructor(public state: any) {
   }

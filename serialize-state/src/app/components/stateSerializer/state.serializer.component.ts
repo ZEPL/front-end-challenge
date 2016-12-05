@@ -4,7 +4,6 @@ import {Action, ChangeStateAction} from './state.serializer.action';
 import {SerializableState, dispatcher, state, requestStateAndDispatcher} from './state.serializer.state';
 
 
-
 @Component({
   selector: 'state-serializer',
   templateUrl: './state.serializer.component.html',
@@ -67,7 +66,6 @@ export class StateSerializerComponent implements OnInit {
     this.stateInputEl.nativeElement.value = '';
     this.childStateJSON = '';
   }
-
 
 
   /**
