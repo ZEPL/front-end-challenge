@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Clipboard from '../containers/Clipboard.jsx';
-import ProfileForm from './ProfileForm.jsx';
+import DynamicProfileForm from '../containers/DynamicProfileForm.jsx';
 
-const App = () => (
+const App = ({ props }) => (
   <div>
     <Clipboard />
-    <ProfileForm />
+    <DynamicProfileForm />
   </div>
 );
 

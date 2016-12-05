@@ -4,7 +4,6 @@ import { getState, setState } from '../actions';
 
 let Clipboard = ({ dispatch }) => {
   let input;
-
   return (
     <section>
       <input placeholder="Paste state here" ref={node => {
@@ -13,9 +12,9 @@ let Clipboard = ({ dispatch }) => {
 
       <button onClick={e => {
         try { // simple test to validate if entered text is JSON
-          JSON.parse(input.value)
-          dispatch(setState(input.value))
-          input.value = ''
+          let parsedState = JSON.parse(input.value);
+          dispatch(setState(parsedState)); // passes parsed input to the system
+          input.value = '';
         } catch (e) {
           console.warn('Cannot parse entered state');
         }

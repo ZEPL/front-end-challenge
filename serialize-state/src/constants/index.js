@@ -1,6 +1,7 @@
 // constants relatd to actions
 export const GET_STATE = 'GET_STATE';
 export const SET_STATE = 'SET_STATE';
+export const MUTATE_FORM = 'MUTATE_FORM';
 
 // constants for handling values stored in state
 export const SPIDEY = 'SPIDEY';
