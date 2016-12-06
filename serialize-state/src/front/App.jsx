@@ -1,17 +1,25 @@
 import React, { Component, PropTypes } from 'react';
-// import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
-import reducers from './reducers/AppReducer';
-import RadioContainer from './components/RadioContainer';
-import ControlContainer from './components/ControlContainer';
-
-// const store = createStore(reducers);
-const structure = {};
+import { connect } from 'react-redux';
+import TreeContainer from './components/tree/TreeContainer';
+import ControlContainer from './components/control/ControlContainer';
+import BooleanElement from './model/BooleanElement';
+import { treeInitAction } from './actions/TreeUpdateAction';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.tree = {}
+
+    this.tree = [
+      new BooleanElement('radio', 'radio', 'radio1', false, [
+        new BooleanElement('checkbox1', 'checkbox', 'checkbox1', false, null),
+        new BooleanElement('checkbox2', 'checkbox', 'checkbox2', false, null),
+        new BooleanElement('checkbox3', 'checkbox', 'checkbox3', false, null)
+      ]),
+      new BooleanElement('radio', 'radio', 'radio2', false, [
+        new BooleanElement('checkbox4', 'checkbox', 'checkbox4', false, null),
+        new BooleanElement('checkbox4', 'checkbox', 'checkbox4', false, null)
+      ])
+    ];
   }
 
   onTreeUpdate(path, value) {
@@ -43,14 +51,16 @@ class App extends Component {
     this.tree = newTree;
   }
   
+  componentDidMount() {
+    this.props.treeInitAction(this.tree);
+  }
+  
   render() {
     return (
       <div>
         <ControlContainer tree={this.tree} />
-        <RadioContainer onTreeUpdate={this.onTreeUpdate.bind(this)} />
+        <TreeContainer tree={this.tree} />
       </div>
-      // <Provider store={store}>
-      // </Provider>
     );
   }
 }
@@ -59,4 +69,12 @@ App.propTypes = {
   message: PropTypes.string,
 };
 
-export default App;
+function mapDispatchToProps(dispatch) {
+  return {
+    treeInitAction: function (tree) {
+      dispatch(treeInitAction(tree));
+    }
+  };
+}
+
+export default connect(null, mapDispatchToProps)(App);

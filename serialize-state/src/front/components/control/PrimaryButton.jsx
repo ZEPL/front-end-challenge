@@ -6,7 +6,7 @@ class PrimaryButton extends Component {
     const label = this.props.label || 'label';
     
     return (
-      <button type={buttonType}>{label}</button>
+      <button type={buttonType} onClick={this.props.onClick}>{label}</button>
     );
   }
 }
