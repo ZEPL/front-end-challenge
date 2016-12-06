@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-class TreeContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const elements = this.props.tree.map(element => element.create());
-    
-    return (
-      <div className="ss-radio-container">
-        {elements}
-      </div>
-    );
-  }
+function TreeContainer({ tree }) {
+  return (
+    <div className="ss-radio-container">
+      {tree.map(element => element.create())}
+    </div>
+  );
 }
+
+TreeContainer.propTypes = {
+  tree: PropTypes.array,
+};
 
 function mapStateToProps(state) {
   return {
-    tree: state.treeUpdate.tree
-  }
+    tree: state.treeUpdate.tree,
+  };
 }
 
 export default connect(mapStateToProps)(TreeContainer);

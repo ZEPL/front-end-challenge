@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Uuid from '../../services/Uuid';
 import treeUpdateAction from '../../actions/TreeUpdateAction';
@@ -7,6 +7,8 @@ import './CheckBoxComponent.scss';
 class CheckBoxComponent extends Component {
   constructor(props) {
     super(props);
+    
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(event) {
@@ -24,19 +26,32 @@ class CheckBoxComponent extends Component {
     
     return (
       <label className="ss-checkbox" htmlFor={id}>
-        <input id={id} type="checkbox" name={formName} disabled={disabled} onChange={this.onChange.bind(this)} checked={this.props.model.checked} />
+        <input 
+          id={id} 
+          type="checkbox" 
+          name={formName} 
+          disabled={disabled} 
+          onChange={this.onChange} 
+          checked={this.props.model.checked}
+        />
         {label}
       </label>
     );
   }  
 }
 
+CheckBoxComponent.propTypes = {
+  model: PropTypes.object,
+  disabled: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onTreeUpdate: PropTypes.func.isRequired,
+};
+
 function mapDispatchToProps(dispatch) {
   return {
-    onTreeUpdate: function (model) {
-      dispatch(treeUpdateAction(model));
-    }
-  }
+    onTreeUpdate: (model) => { dispatch(treeUpdateAction(model)); }, 
+  };
 }
 
 export default connect(null, mapDispatchToProps)(CheckBoxComponent);

@@ -27,7 +27,7 @@ class TreeStorage {
       
       treeStr = JSON.stringify(json);
       treeStr = (treeStr === '{}') ? '' : treeStr;
-    } catch(err) {
+    } catch (err) {
       treeStr = '';
     }
     

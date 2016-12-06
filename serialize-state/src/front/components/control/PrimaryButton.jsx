@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 
-class PrimaryButton extends Component {
-  render() {
-    const buttonType = this.props.buttonType || 'button';
-    const label = this.props.label || 'label';
-    
-    return (
-      <button type={buttonType} onClick={this.props.onClick}>{label}</button>
-    );
-  }
+function PrimaryButton({ onClickHandler, buttonType = 'button', label = 'label' }) {
+  return (
+    <button type={buttonType} onClick={onClickHandler}>{label}</button>
+  );
 }
+
+PrimaryButton.propTypes = {
+  buttonType: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onClickHandler: PropTypes.func,
+};
+
+PrimaryButton.defaultProps = {
+  buttonType: 'button',
+  label: 'label',
+};
 
 export default PrimaryButton;

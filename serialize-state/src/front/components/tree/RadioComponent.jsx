@@ -5,10 +5,11 @@ import treeUpdateAction from '../../actions/TreeUpdateAction';
 import './RadioComponent.scss';
 
 class RadioComponent extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     
     this.elemId = Uuid.getUuid()();
+    this.onChange = this.onChange.bind(this);
   }
   
   onChange(event) {
@@ -23,14 +24,19 @@ class RadioComponent extends Component {
     const label = this.props.label || '';
     const isChildrenDisabled = !this.props.model.checked;
     
-    const children = React.Children.map(this.props.children, (element) => {
-      return React.cloneElement(element, { disabled: isChildrenDisabled });
-    });
+    const children = React.Children.map(this.props.children, element => 
+      React.cloneElement(element, { disabled: isChildrenDisabled }));
     
     return (
       <div className="ss-radio">
         <label htmlFor={this.elemId}>
-          <input id={this.elemId} type="radio" name={formName} onChange={this.onChange.bind(this)} checked={this.props.model.checked} />
+          <input 
+            id={this.elemId} 
+            type="radio" 
+            name={formName} 
+            onChange={this.onChange} 
+            checked={this.props.model.checked}
+          />
           {label}
         </label>
         <div className="ss-radio-child-container">
@@ -41,16 +47,18 @@ class RadioComponent extends Component {
   }
 }
 
-RadioComponent.PropTypes = {
-  name: PropTypes.string
+RadioComponent.propTypes = {
+  model: PropTypes.object,  
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onTreeUpdate: PropTypes.func.isRequired,
+  children: PropTypes.array,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    onTreeUpdate: function (model) {
-      dispatch(treeUpdateAction(model));
-    }
-  }
+    onTreeUpdate: (model) => { dispatch(treeUpdateAction(model)); }, 
+  };
 }
 
 export default connect(null, mapDispatchToProps)(RadioComponent);

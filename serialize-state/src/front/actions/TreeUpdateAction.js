@@ -5,20 +5,20 @@ export const TREE_SET_ACTION = 'TREE_SET_ACTION';
 export function treeInitAction(value) {
   return {
     type: TREE_INIT_ACTION,
-    tree: value
-  }
+    tree: value,
+  };
 }
 
 export function treeSetAction(value) {
   return {
     type: TREE_SET_ACTION,
-    jsonStr: value
+    jsonStr: value,
   };
 }
 
 export default function treeUpdateAction(value) {
   return {
     type: TREE_UPDATE_ACTION,
-    model: value
+    model: value,
   };
 }

@@ -8,8 +8,13 @@ const config = {
       '!./src/front/**.htm',
       '!./src/front/**.html',
     ],
-    watchSource: [
-      './src/front/**'
+    watchJavascript: [
+      './src/front/**',
+      '!./src/front/resources/**',
+      '!./src/front/**.css',
+      '!./src/front/**.scss',
+      '!./src/front/**.htm',
+      '!./src/front/**.html',
     ]
   }
 };

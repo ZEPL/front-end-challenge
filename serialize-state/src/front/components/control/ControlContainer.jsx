@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import StringInput from './StringInput';
 import PrimaryButton from './PrimaryButton';
@@ -10,8 +10,12 @@ class ControlContainer extends Component {
     super(props);
     
     this.state = {
-      treeStr: ''
+      treeStr: '',
     };
+    
+    this.onClickSaveState = this.onClickSaveState.bind(this);
+    this.onClickSetState = this.onClickSetState.bind(this);
+    this.onFocusStringInput = this.onFocusStringInput.bind(this);
   }
   
   onClickSaveState() {
@@ -27,25 +31,31 @@ class ControlContainer extends Component {
   
   onFocusStringInput() {
     const treeStr = TreeStorage.get();
-    this.setState({ treeStr: treeStr })
+    this.setState({ treeStr });
   }
   
   render() {
     return (
       <div>
-        <StringInput treeStr={this.state.treeStr} onFocusHandler={this.onFocusStringInput.bind(this)} />
-        <PrimaryButton label="set state" onClick={this.onClickSetState.bind(this)}/>
-        <PrimaryButton label="save state" onClick={this.onClickSaveState.bind(this)}/>
+        <StringInput 
+          treeStr={this.state.treeStr} 
+          onFocusHandler={this.onFocusStringInput} 
+        />
+        <PrimaryButton label="set state" onClickHandler={this.onClickSetState} />
+        <PrimaryButton label="save state" onClickHandler={this.onClickSaveState} />
       </div>
     );
   }
 }
 
+ControlContainer.propTypes = {
+  tree: PropTypes.array,
+  dispatchSetState: PropTypes.func,
+};
+
 function mapDispatchToProps(dispatch) {
   return {
-    dispatchSetState: function dispatchSetState(treeStr) {
-      dispatch(treeSetAction(treeStr)); 
-    }
+    dispatchSetState: (treeStr) => { dispatch(treeSetAction(treeStr)); }, 
   };
 }
 

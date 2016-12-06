@@ -1,18 +1,25 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import Uuid from '../../services/Uuid';
 
-class StringInput extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
-    const name = this.props.name || Uuid.getUuid()();
-
-    return (
-      <input type="text" name={name} onFocus={this.props.onFocusHandler} value={this.props.treeStr}/>
-    );
-  }
+function StringInput({ name = Uuid.getUuid()(), onFocusHandler, treeStr }) {
+  return (
+    <input 
+      type="text" 
+      name={name} 
+      onFocus={onFocusHandler} 
+      value={treeStr}
+    />
+  );
 }
+
+StringInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  onFocusHandler: PropTypes.func,
+  treeStr: PropTypes.string,
+};
+
+StringInput.defaultProps = {
+  name: Uuid.getUuid()(),
+};
 
 export default StringInput;
