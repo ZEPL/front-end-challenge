@@ -1,4 +1,4 @@
-import { TREE_UPDATE_ACTION, TREE_INIT_ACTION } from '../actions/TreeUpdateAction';
+import { TREE_UPDATE_ACTION, TREE_SET_ACTION, TREE_INIT_ACTION } from '../actions/TreeUpdateAction';
 import BooleanElement from '../model/BooleanElement';
 
 export default function treeUpdateReducer(state = { tree: [] }, action) {
@@ -11,6 +11,22 @@ export default function treeUpdateReducer(state = { tree: [] }, action) {
       BooleanElement.traverse(action.model.key, newTree, action.model);
       
       return Object.assign({}, state, { tree: newTree});
+      
+    case TREE_SET_ACTION:
+      let newState;
+      
+      try {
+        const newTree = [ ...state.tree ];
+        const jsonTree = JSON.parse(action.jsonStr);
+        BooleanElement.updateElementsUsingJson(jsonTree, newTree);
+        // const newTree = BooleanElement.createFromJson(jsonTree);
+
+        newState = Object.assign({}, state, { tree: newTree});
+      } catch (err) {
+        newState = state;
+      }
+      
+      return newState;
 
     default:
       return state;

@@ -12,7 +12,7 @@ export function treeInitAction(value) {
 export function treeSetAction(value) {
   return {
     type: TREE_SET_ACTION,
-    json: value
+    jsonStr: value
   };
 }
 

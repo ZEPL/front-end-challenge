@@ -61,6 +61,42 @@ class BooleanElement {
     }
   }
   
+  static updateElementsUsingJson(json, elements) {
+    elements.forEach(element => {
+      BooleanElement.updateElementUsingJson(json[element.label], element);
+    });
+  }
+  
+  static updateElementUsingJson(json, element) {
+    if (element.children) {
+      element.name = json.name;
+      element.type = json.type;
+      element.checked = json.checked;
+      
+      BooleanElement.updateElementsUsingJson(json.children, element.children);
+    } else {
+      element.name = json.name;
+      element.type = json.type;
+      element.checked = json.checked;
+    }
+  }
+  
+  static createFromJson(json) {
+    const keys = Object.keys(json);
+    
+    return keys.map(key => {
+      return BooleanElement.createElementFromJson(key, json[key]);
+    });
+  }
+  
+  static createElementFromJson(key, json) {
+    if (json.children) {
+      return new BooleanElement(json.name, json.type, key, json.checked, BooleanElement.createFromJson(json.children));
+    } else {
+      return new BooleanElement(json.name, json.type, key, json.checked, []);
+    }
+  }
+  
   toJson() {
     const element = {
       name: this.name,

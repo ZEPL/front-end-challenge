@@ -15,7 +15,7 @@ class CheckBoxComponent extends Component {
 
     this.props.onTreeUpdate(model);
   }
-  
+
   render() {
     const id = Uuid.getUuid()();
     const formName = this.props.name || Uuid.getUuid()();
@@ -24,7 +24,7 @@ class CheckBoxComponent extends Component {
     
     return (
       <label className="ss-checkbox" htmlFor={id}>
-        <input id={id} type="checkbox" name={formName} disabled={disabled} onChange={this.onChange.bind(this)} />
+        <input id={id} type="checkbox" name={formName} disabled={disabled} onChange={this.onChange.bind(this)} checked={this.props.model.checked} />
         {label}
       </label>
     );

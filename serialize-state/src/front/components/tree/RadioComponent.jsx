@@ -18,10 +18,6 @@ class RadioComponent extends Component {
     this.props.onTreeUpdate(model);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log('radio componentWillReceiveProps ->', nextProps);
-  }
-  
   render() {
     const formName = this.props.name || Uuid.getUuid()();
     const label = this.props.label || '';
@@ -34,7 +30,7 @@ class RadioComponent extends Component {
     return (
       <div className="ss-radio">
         <label htmlFor={this.elemId}>
-          <input id={this.elemId} type="radio" name={formName} onChange={this.onChange.bind(this)} />
+          <input id={this.elemId} type="radio" name={formName} onChange={this.onChange.bind(this)} checked={this.props.model.checked} />
           {label}
         </label>
         <div className="ss-radio-child-container">

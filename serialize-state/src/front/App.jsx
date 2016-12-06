@@ -17,7 +17,7 @@ class App extends Component {
       ]),
       new BooleanElement('radio', 'radio', 'radio2', false, [
         new BooleanElement('checkbox4', 'checkbox', 'checkbox4', false, null),
-        new BooleanElement('checkbox4', 'checkbox', 'checkbox4', false, null)
+        new BooleanElement('checkbox5', 'checkbox', 'checkbox5', false, null)
       ])
     ];
   }
