@@ -5,27 +5,32 @@ import { MARVEL, DC, SPIDEY, HULK, BATMAN, SUPERMAN } from '../constants';
 
 const ProfileForm = React.createClass({
 
+  // handles username change
   handleNameChange(e) {
     this.props.dispatch(formChange({ userName: e.target.value }));
   },
 
+  // handles change in seleted comic family
   handleComicChange(e) {
     this.props.dispatch(formChange({ comic: e.target.value, superHeroes: [] }));
   },
 
-  handleSuperheroChange(e) {
+  // handles superhero change
+  handleSuperheroChange(event) {
+    let hero = event.target.value;
+    let indexOfHero = this.props.state.superHeroes.indexOf(hero);
     let newSuperHeroes;
-    let heroInAction = e.target.value;
-    if (!e.target.checked) {
-      newSuperHeroes = this.props.state.superHeroes.splice(this.props.state.superHeroes.indexOf(heroInAction), 1);
+
+    if (indexOfHero == -1) { // hero not present in list
+      newSuperHeroes = this.props.state.superHeroes.concat([hero]);
     } else {
-      newSuperHeroes = this.props.state.superHeroes.concat([heroInAction]);
+      newSuperHeroes = this.props.state.superHeroes.splice(indexOfHero, 1);
     }
+
     this.props.dispatch(formChange({ superHeroes: newSuperHeroes }));
   },
 
   render() {
-    let userName;
     return (
       <section>
         <h4>Profile Form</h4>
@@ -93,7 +98,6 @@ const ProfileForm = React.createClass({
       </section>
     );
   }
-
 });
 
 export default ProfileForm;

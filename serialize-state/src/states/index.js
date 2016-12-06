@@ -2,7 +2,7 @@ import { MARVEL, DC, SPIDEY, HULK, BATMAN, SUPERMAN } from '../constants';
 
 // default state
 const initialState = {
-  userName: undefined,
+  userName: '',
   comic: undefined,
   superHeroes: []
 };
