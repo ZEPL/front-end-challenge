@@ -1,3 +1,35 @@
+SerializeState
+==============
+
+**SerializeState** is a react-redux application/component that can be combined
+with any application to serialize, store and set its state using a clipboard,
+so that you can basically time travel through the application.
+
+## Installation instructions
+
+  * Install nodejs + npm latest: https://nodejs.org/en/download/
+  * Clone this repository and cd into 'serialize-state'
+  * Run `npm install`
+
+## Demo
+
+  * Run `npm run webpack-server`
+  * Open `localhost:8080` in web browser
+
+## Development mode
+
+  * Run `npm run dev` for auto building
+
+## Tests
+
+  * Run `npm test`
+
+## Wishlist
+
+  * Hot reload
+
+<==============================================================================>
+
 Front-end engineer challenge
 ============================
 This challenge is designed to assess the ability of a front-end candidate to
