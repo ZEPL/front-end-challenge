@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Clipboard from '../containers/Clipboard.jsx';
+import SerializeState from '../component-enhancers/SerializeState.jsx';
 import DynamicProfileForm from '../containers/DynamicProfileForm.jsx';
 
 const App = ({ props }) => (
   <div>
-    <Clipboard />
-    <DynamicProfileForm />
+    { SerializeState(DynamicProfileForm) }
   </div>
 );
 

@@ -15,7 +15,7 @@ let Clipboard = ({ dispatch }) => {
           let parsedState = JSON.parse(input.value);
           dispatch(setState(parsedState)); // passes parsed input to the system
           input.value = '';
-        } catch (e) {
+        } catch (e) { // entered data isn't valid json
           console.warn('Cannot parse entered state');
         }
       }}>Set State</button>
