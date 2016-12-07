@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './components/App.jsx';
+import App from './components/App.js';
 import reducer from './reducers';
 import defaultState from './states';
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
-import ProfileForm from '../components/ProfileForm.jsx';
+import ProfileForm from '../components/ProfileForm.js';
 
 const mapStateToProps = (state) => ({
   state
