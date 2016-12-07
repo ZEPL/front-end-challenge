@@ -1,6 +1,6 @@
 // Reducer for clipboard component
 
-import { GET_STATE, SET_STATE, MUTATE_FORM } from '../constants';
+import { GET_STATE, SET_STATE } from '../constants';
 import defaultState from '../states';
 import copyDataToClipboard from '../helpers';
 

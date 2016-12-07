@@ -1,3 +1,5 @@
+// Just an arbitary child component
+
 import React from 'react';
 
 import { formChange } from '../actions';

@@ -1,3 +1,5 @@
+// The clipboard to handle copy/set state operations
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { getState, setState } from '../actions';

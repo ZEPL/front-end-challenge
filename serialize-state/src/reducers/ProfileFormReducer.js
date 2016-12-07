@@ -1,6 +1,6 @@
 // Reducer for profileForm component
 
-import { GET_STATE, SET_STATE, MUTATE_FORM } from '../constants';
+import { MUTATE_FORM } from '../constants';
 import defaultState from '../states';
 
 const profileFormReducer = (state = defaultState, action) => {

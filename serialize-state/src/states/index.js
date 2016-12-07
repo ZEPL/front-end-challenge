@@ -1,5 +1,3 @@
-import { MARVEL, DC, SPIDEY, HULK, BATMAN, SUPERMAN } from '../constants';
-
 // default state
 const initialState = {
   userName: '',
