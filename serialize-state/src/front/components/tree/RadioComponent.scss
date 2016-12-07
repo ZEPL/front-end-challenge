@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.ss-radio {
+  margin-bottom: $default-element-space;
+  
+  .ss-radio-child-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: $child-element-left-padding;
+  }
+}
+
