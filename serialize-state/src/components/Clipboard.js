@@ -1,7 +1,7 @@
-// The clipboard to handle copy/set state operations
+// Just an arbitary child component
 
 import React from 'react';
-import { connect } from 'react-redux';
+
 import { getState, setState } from '../actions';
 
 let Clipboard = ({ dispatch }) => {
@@ -29,7 +29,5 @@ let Clipboard = ({ dispatch }) => {
     </section>
   );
 }
-
-Clipboard = connect()(Clipboard);
 
 export default Clipboard;

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import SerializeState from '../component-enhancers/SerializeState.js';
-import DynamicProfileForm from '../containers/DynamicProfileForm.js';
+import ProfileForm from '../containers/ProfileFormContainer.js';
 
 const App = ({ props }) => (
   <div>
-    { SerializeState(DynamicProfileForm) }
+    { SerializeState(ProfileForm) }
   </div>
 );
 
