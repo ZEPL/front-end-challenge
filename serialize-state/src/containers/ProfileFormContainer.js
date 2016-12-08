@@ -4,17 +4,15 @@ import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
 import ProfileForm from '../components/ProfileForm.js';
 
-const mapStateToProps = (state) => ({
-  state
-});
+const mapStateToProps = state => ({ ...state });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   dispatch
 });
 
-const DynamicProfileForm = connect(
+const ProfileFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ProfileForm);
 
-export default DynamicProfileForm;
+export default ProfileFormContainer;

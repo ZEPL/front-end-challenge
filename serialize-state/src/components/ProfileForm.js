@@ -20,13 +20,13 @@ const ProfileForm = React.createClass({
   // handles superhero change
   handleSuperheroChange(event) {
     let hero = event.target.value;
-    let indexOfHero = this.props.state.superHeroes.indexOf(hero);
+    let indexOfHero = this.props.superHeroes.indexOf(hero);
     let newSuperHeroes;
 
     if (indexOfHero == -1) { // hero not present in list
-      newSuperHeroes = this.props.state.superHeroes.concat([hero]);
+      newSuperHeroes = this.props.superHeroes.concat([hero]);
     } else {
-      newSuperHeroes = this.props.state.superHeroes.splice(indexOfHero, 1);
+      newSuperHeroes = this.props.superHeroes.splice(indexOfHero, 1);
     }
 
     this.props.dispatch(formChange({ superHeroes: newSuperHeroes }));
@@ -39,11 +39,11 @@ const ProfileForm = React.createClass({
         <p>Hi my name is</p>
         <input
           onChange={ this.handleNameChange }
-          value={ this.props.state.userName } />
+          value={ this.props.userName } />
         <p>and I love</p>
         <div>
           <input
-            checked={ this.props.state.comic == MARVEL }
+            checked={ this.props.comic == MARVEL }
             name="comic"
             value={ MARVEL }
             type="radio"
@@ -51,8 +51,8 @@ const ProfileForm = React.createClass({
           <ul>
             <li>
               <input
-                checked={ this.props.state.superHeroes.indexOf(SPIDEY) != -1 }
-                disabled={ this.props.state.comic !== MARVEL }
+                checked={ this.props.superHeroes.indexOf(SPIDEY) != -1 }
+                disabled={ this.props.comic !== MARVEL }
                 type="checkbox"
                 onChange={ this.handleSuperheroChange }
                 value={ SPIDEY } />
@@ -60,10 +60,10 @@ const ProfileForm = React.createClass({
             </li>
             <li>
               <input
-                checked={ this.props.state.superHeroes.indexOf(HULK) != -1 }
+                checked={ this.props.superHeroes.indexOf(HULK) != -1 }
                 type="checkbox"
                 onChange={ this.handleSuperheroChange }
-                disabled={ this.props.state.comic !== MARVEL }
+                disabled={ this.props.comic !== MARVEL }
                 value={ HULK } />
               Hulk
             </li>
@@ -74,15 +74,15 @@ const ProfileForm = React.createClass({
             type="radio"
             name="comic"
             value={ DC }
-            checked={ this.props.state.comic == DC }
+            checked={ this.props.comic == DC }
             onChange={ this.handleComicChange } /> DC
           <ul>
             <li>
               <input
                 type="checkbox"
                 onChange={ this.handleSuperheroChange }
-                checked={ this.props.state.superHeroes.indexOf(BATMAN) != -1 }
-                disabled={ this.props.state.comic !== DC }
+                checked={ this.props.superHeroes.indexOf(BATMAN) != -1 }
+                disabled={ this.props.comic !== DC }
                 value={ BATMAN } />
               Batman
             </li>
@@ -90,8 +90,8 @@ const ProfileForm = React.createClass({
               <input
                 type="checkbox"
                 onChange={ this.handleSuperheroChange }
-                checked={ this.props.state.superHeroes.indexOf(SUPERMAN) != -1 }
-                disabled={ this.props.state.comic !== DC }
+                checked={ this.props.superHeroes.indexOf(SUPERMAN) != -1 }
+                disabled={ this.props.comic !== DC }
                 value={ SUPERMAN } />
               Superman
             </li>
