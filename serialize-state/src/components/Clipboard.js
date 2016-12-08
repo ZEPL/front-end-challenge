@@ -8,7 +8,7 @@ let Clipboard = ({ dispatch }) => {
   let input;
   return (
     <section>
-      <input placeholder="Paste state here" ref={node => {
+      <input id="clipboard-input" placeholder="Paste state here" ref={node => {
         input = node;
       }}/>
 
