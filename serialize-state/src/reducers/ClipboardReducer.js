@@ -8,12 +8,6 @@ const clipboardReducer = (state = defaultState, action) => {
   let newState;
 
   switch(action.type) {
-
-    case GET_STATE: // copies state to clipboard
-      newState = { ...state };
-      copyDataToClipboard(JSON.stringify(newState));
-      break;
-
     case SET_STATE: // replaces entire state with data from clipboard
       newState = { ...action.state };
       break;
