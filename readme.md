@@ -5,4 +5,4 @@ corresponding readmes for further instructions
 
 1. [Serialize state](https://github.com/NFLabs/front-end-challenge/tree/master/serialize-state)
 2. [Slack clone](https://github.com/NFLabs/front-end-challenge/tree/master/slack-clone)
-
+3. [Notes app](https://github.com/ZEPL/front-end-challenge/tree/master/notes-app)
